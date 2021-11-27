@@ -18,8 +18,8 @@
     }
   },
   "lint-staged": {
-    "*": [
-      "yarn lint",
+    "./src/**/*": [
+      "eslint --fix",
       "yarn test --bail"
     ]
   },

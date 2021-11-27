@@ -4,8 +4,6 @@ interface Props {
   title: string;
 }
 
-const foo = 'bar';
-
 const Home = function ({ title }: Props) {
   return (
     <div className="container">

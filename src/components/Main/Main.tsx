@@ -1,7 +1,7 @@
 const Main = function () {
   return (
     <main>
-      <h2>Esdras proj initialzer</h2>
+      <p>Esdras proj initialzer</p>
     </main>
   );
 };
