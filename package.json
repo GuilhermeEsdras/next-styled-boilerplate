@@ -13,8 +13,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "src/**/*": [
-      "yarn lint:fix"
+    "./src/**/*": [
+      "yarn lint"
     ]
   },
   "dependencies": {
