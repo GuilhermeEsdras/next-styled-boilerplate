@@ -1,8 +1,5 @@
 module.exports = {
-  collectCoverageFrom: [
-    'src/**/*.{js,jsx,ts,tsx}',
-    'pages/**/*.{js,jsx,ts,tsx}',
-  ],
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '@src/(.*)': '<rootDir>/src/$1',
     '@pages/(.*)': '<rootDir>/pages/$1',
@@ -25,7 +22,6 @@ module.exports = {
     '<rootDir>/coverage',
     '<rootDir>/dist',
   ],
-  testEnvironment: 'jsdom',
   transform: {
     /* Use babel-jest to transpile tests with the next/babel preset */
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
@@ -38,6 +34,11 @@ module.exports = {
     '<rootDir>/node_modules',
     '<rootDir>/src',
     '<rootDir>/pages',
+  ],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    'pages/**/*.{js,jsx,ts,tsx}',
   ],
   coverageDirectory: 'coverage',
   coverageThreshold: {
