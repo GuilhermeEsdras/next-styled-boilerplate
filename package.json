@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "*": [
-      "yarn lint"
+      "yarn lint", "yarn test --bail"
     ]
   },
   "dependencies": {
