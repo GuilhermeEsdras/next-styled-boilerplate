@@ -2,10 +2,20 @@
   "name": "boilerplate",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint:fix"
+    ]
   },
   "dependencies": {
     "next": "12.0.4",
@@ -13,7 +23,38 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "7",
-    "eslint-config-next": "12.0.4"
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.10",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "axe-core": "^4.3.5",
+    "babel-jest": "^27.3.1",
+    "cross-env": "^7.0.3",
+    "eslint": "<8.0.0",
+    "eslint-config-airbnb": "^19.0.1",
+    "eslint-config-next": "^12.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "react-test-renderer": "^17.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   }
 }
