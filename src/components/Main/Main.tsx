@@ -7,13 +7,13 @@ const Main = ({
   return (
     <S.Wrapper>
       <S.Logo
-        src="/img/icon-512.png"
+        src="/icons/icon-512.png"
         alt="Imagem de um átomo dentro de um hexágono representando a logo do React"
       />
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
       <S.Illustration
-        src="/img/hero-illustration.svg"
+        src="/images/hero-illustration.svg"
         alt="Ilustração de um desenvolvedor de frente para uma tela com código"
       />
     </S.Wrapper>

@@ -41,12 +41,15 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+          <link rel="shortcut icon" href="/icons/icon-192.png" />
+          <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+          <meta name="theme-color" content="#06092b" />
+          <meta
+            name="description"
+            content="My Boilerplate for Next.js and React.js PWA Projects using TypeScript, Styled Components, Jest, Storybook, Husky, ESLint and Prettier!"
           />
-          <meta name="Homepage" content="Esdras's Personal Portfolio" />
-          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />

@@ -50,7 +50,7 @@ exports[`<Main /> Snapshot Matches renders Main unchanged 1`] = `
   <img
     alt="Imagem de um átomo dentro de um hexágono representando a logo do React"
     class="c1"
-    src="/img/icon-512.png"
+    src="/icons/icon-512.png"
   />
   <h1
     class="c2"
@@ -65,7 +65,7 @@ exports[`<Main /> Snapshot Matches renders Main unchanged 1`] = `
   <img
     alt="Ilustração de um desenvolvedor de frente para uma tela com código"
     class="c4"
-    src="/img/hero-illustration.svg"
+    src="/images/hero-illustration.svg"
   />
 </main>
 `;
