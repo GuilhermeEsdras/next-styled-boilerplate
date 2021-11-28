@@ -37,8 +37,10 @@ module.exports = {
   ],
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.{js,jsx,ts,tsx}',
-    'src/pages/**/*.{js,jsx,ts,tsx}',
+    'src/**/*.ts(x)?',
+    '!src/**/*.stories.ts(x)?',
+    '!src/pages/*',
+    '!src/styles/*',
   ],
   coverageDirectory: 'coverage',
   coverageThreshold: {
