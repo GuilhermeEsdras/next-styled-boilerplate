@@ -12,7 +12,8 @@
     "test:coverage": "jest --coverage",
     "prepare": "husky install",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
   "husky": {
     "hooks": {
@@ -70,6 +71,7 @@
     "jest": "^27.3.1",
     "jest-styled-components": "^7.0.8",
     "lint-staged": "^12.1.2",
+    "plop": "^3.0.0",
     "prettier": "^2.5.0",
     "react-test-renderer": "^17.0.2",
     "ts-node": "^10.4.0",
