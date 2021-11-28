@@ -16,6 +16,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -97,6 +98,7 @@ module.exports = {
           '**/*.spec.tsx',
           '**/*.test.ts',
           '**/*.spec.ts',
+          '**/*.stories.tsx',
         ],
       },
     ],
@@ -135,6 +137,14 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['*.stories.@(ts|tsx|js|mjs|cjs)'],
+      rules: {
+        'storybook/story-exports': 'off',
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',

@@ -60,7 +60,7 @@ exports[`<Main /> Snapshot Matches renders Main unchanged 1`] = `
   <h2
     class="c3"
   >
-    My Boilerplate for Next.js/React.js Projects using TypeScript, Styled Components, Jest, Storybook, Husky and ESLint/Prettier.
+    My Boilerplate for Next.js & React.js Projects using TypeScript, Styled Components, Jest, Storybook, Husky and ESLint/Prettier
   </h2>
   <img
     alt="Ilustração de um desenvolvedor de frente para uma tela com código"

@@ -10,7 +10,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -30,7 +32,10 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
+    "@storybook/addon-essentials": "^6.4.0",
+    "@storybook/react": "^6.4.0",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
@@ -45,6 +50,7 @@
     "@typescript-eslint/parser": "^5.4.0",
     "axe-core": "^4.3.5",
     "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
     "babel-plugin-styled-components": "^2.0.1",
     "cross-env": "^7.0.3",
     "eslint": "<8.0.0",
@@ -57,6 +63,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.5.0",
     "git-cz": "^4.8.0",
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
