@@ -18,7 +18,10 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "storybook:build": "build-storybook -s ./public",
     "prepare": "husky install",
-    "generate": "yarn plop --plopfile ./generators/plopfile.js"
+    "generate": "yarn plop --plopfile ./generators/plopfile.js",
+    "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
+    "generate:page": "yarn plop --plopfile ./generators/plopfile.js page"
+
   },
   "husky": {
     "hooks": {
