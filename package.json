@@ -7,17 +7,17 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "start": "next start",
     "build": "next build",
     "build:prod": "NODE_ENV=production yarn build",
-    "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix .",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prepare": "husky install",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s ./public",
+    "storybook:build": "build-storybook -s ./public",
+    "prepare": "husky install",
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
   "husky": {
