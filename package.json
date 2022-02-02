@@ -1,6 +1,6 @@
 {
   "name": "next-styled-boilerplate",
-  "author": "GUilherme Esdras",
+  "author": "Guilherme Esdras",
   "version": "1.0.0",
   "description": "A Boilerplate for Next.js and React.js with Styled Components PWA Projects using TypeScript, Jest, Storybook, Husky and ESLint/Prettier!",
   "repository": "www.github.com/GuilhermeEsdras/next-styled-boilerplate",
@@ -20,7 +20,7 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
     "generate:page": "yarn plop --plopfile ./generators/plopfile.js page",
-    "commit": "git-cz",
+    "commit": "git add . && git-cz",
     "postinstall": "husky install"
   },
   "husky": {
