@@ -17,12 +17,12 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix .",
     "git:ac": "git add . && git commit -m",
+    "commit": "git-cz",
     "storybook": "start-storybook -s ./public -p 6006",
     "storybook:build": "build-storybook -s ./public",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
     "generate:page": "yarn plop --plopfile ./generators/plopfile.js page",
-    "commit": "git-cz",
     "prepare": "husky install",
     "postinstall": "yarn prepare"
   },
