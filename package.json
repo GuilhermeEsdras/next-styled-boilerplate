@@ -1,6 +1,6 @@
 {
   "name": "next-styled-boilerplate",
-  "author": "GUilherme Esdras",
+  "author": "Guilherme Esdras",
   "version": "1.0.0",
   "description": "A Boilerplate for Next.js and React.js with Styled Components PWA Projects using TypeScript, Jest, Storybook, Husky and ESLint/Prettier!",
   "repository": "www.github.com/GuilhermeEsdras/next-styled-boilerplate",
@@ -22,7 +22,9 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
     "generate:page": "yarn plop --plopfile ./generators/plopfile.js page",
-    "prepare": "husky install"
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "postinstall": "yarn prepare"
   },
   "husky": {
     "hooks": {
@@ -46,6 +48,8 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@storybook/addon-essentials": "^6.4.0",
     "@storybook/react": "^6.4.9",
     "@testing-library/dom": "^8.11.1",
@@ -64,7 +68,9 @@
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-styled-components": "^2.0.1",
+    "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "<8.0.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-next": "^12.0.4",
@@ -76,7 +82,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.0",
-    "git-commit-msg-linter": "^4.0.7",
     "git-cz": "^4.8.0",
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
@@ -88,5 +93,10 @@
     "react-test-renderer": "^17.0.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
