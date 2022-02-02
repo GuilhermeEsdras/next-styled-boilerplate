@@ -1,6 +1,6 @@
 {
   "name": "next-styled-boilerplate",
-  "author": "GUilherme Esdras",
+  "author": "Guilherme Esdras",
   "version": "1.0.0",
   "description": "A Boilerplate for Next.js and React.js with Styled Components PWA Projects using TypeScript, Jest, Storybook, Husky and ESLint/Prettier!",
   "repository": "www.github.com/GuilhermeEsdras/next-styled-boilerplate",
@@ -10,17 +10,19 @@
     "start": "next start",
     "build": "next build",
     "build:prod": "NODE_ENV=production yarn build",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:staged": "jest --findRelatedTests",
+    "test:ci": "jest --coverage",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix .",
+    "gac": "git add . && git commit -m",
     "storybook": "start-storybook -s ./public -p 6006",
     "storybook:build": "build-storybook -s ./public",
-    "prepare": "husky install",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
-    "generate:page": "yarn plop --plopfile ./generators/plopfile.js page"
+    "generate:page": "yarn plop --plopfile ./generators/plopfile.js page",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
