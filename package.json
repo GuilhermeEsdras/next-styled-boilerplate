@@ -20,7 +20,7 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
     "generate:page": "yarn plop --plopfile ./generators/plopfile.js page",
-    "commit": "git add . && git-cz",
+    "commit": "git-cz",
     "postinstall": "husky install"
   },
   "husky": {
