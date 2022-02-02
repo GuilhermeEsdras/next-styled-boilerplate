@@ -21,7 +21,6 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
     "generate:page": "yarn plop --plopfile ./generators/plopfile.js page"
-
   },
   "husky": {
     "hooks": {
@@ -75,6 +74,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.0",
+    "git-commit-msg-linter": "^4.0.7",
     "git-cz": "^4.8.0",
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
