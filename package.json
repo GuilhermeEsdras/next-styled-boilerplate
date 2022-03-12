@@ -23,9 +23,9 @@
     "commit:a": "git add . && git-cz",
     "storybook": "start-storybook -s ./public -p 6006",
     "storybook:build": "build-storybook -s ./public",
-    "generate": "yarn plop --plopfile ./generators/plopfile.js",
-    "generate:component": "yarn plop --plopfile ./generators/plopfile.js component",
-    "generate:page": "yarn plop --plopfile ./generators/plopfile.js page",
+    "generate": "yarn plop --plopfile ./generators/plopfile.js && yarn lint:fix",
+    "generate:component": "yarn plop --plopfile ./generators/plopfile.js component && yarn lint:fix",
+    "generate:page": "yarn plop --plopfile ./generators/plopfile.js page && yarn lint:fix",
     "prepare": "husky install",
     "postinstall": "yarn prepare"
   },
