@@ -7,4 +7,8 @@ module.exports = {
     '@storybook/addon-essentials',
   ],
   framework: '@storybook/react',
+  webpackFinal: (config) => {
+    config.resolve.modules.push(`${process.cwd()}/src`);
+    return config;
+  }
 };

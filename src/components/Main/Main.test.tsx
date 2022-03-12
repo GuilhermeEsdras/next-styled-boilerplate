@@ -1,10 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+
+import { renderWithTheme } from '@src/utils/tests/helpers';
 
 import Main from './Main';
 
 describe('<Main /> Tests', () => {
   it('should render the heading', () => {
-    render(<Main />);
+    renderWithTheme(<Main />);
 
     expect(
       screen.getByRole('heading', { name: /esdras proj initialzer/i })
@@ -12,7 +14,7 @@ describe('<Main /> Tests', () => {
   });
 
   it('should render the colors correctly', () => {
-    const { container } = render(<Main />);
+    const { container } = renderWithTheme(<Main />);
 
     expect(container.firstChild).toHaveStyle({ 'background-color': '#06092b' });
   });
