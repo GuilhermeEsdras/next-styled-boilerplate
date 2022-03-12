@@ -44,6 +44,12 @@ exports[`<Main /> Snapshot Matches renders Main unchanged 1`] = `
   width: min(30rem,100%);
 }
 
+@media (max-width:768px) {
+  .c0 {
+    width: 100%;
+  }
+}
+
 <main
   class="c0"
 >

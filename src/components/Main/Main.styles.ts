@@ -1,16 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.main`
-  background: ${({ theme }) => theme.colors.background};
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${({ theme }) => css`
+    background: ${theme.colors.background};
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    ${media.lessThan('medium')`
+      width: 100%;
+    `}
+  `}
 `;
 
 export const Logo = styled.img`
