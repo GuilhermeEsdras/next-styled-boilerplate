@@ -15,7 +15,7 @@
     "test:staged": "jest --findRelatedTests",
     "test:ci": "jest --coverage --runInBand",
     "test:clear": "jest --clearCache",
-    "test:newSnaps": "jest --updateSnapshot",
+    "test:update": "jest --updateSnapshot",
     "lint": "next lint",
     "lint:fix": "next lint --fix .",
     "git:ac": "git add . && git commit -m",
