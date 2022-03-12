@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
+import { renderWithTheme } from '@src/utils/tests/helpers';
 
 import Example from './Example';
 
 describe('<Example /> Snapshot Matches', () => {
   it('renders Example unchanged', () => {
-    const { container } = render(<Example />);
+    const { container } = renderWithTheme(<Example />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

@@ -26,14 +26,17 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": { //alias pathing for absolute paths
-      "@src/*": [
-        "src/*"
-      ],
       "@pages/*": [
         "src/pages/*"
       ],
       "@styles/*": [
         "src/styles/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@src/*": [
+        "src/*"
       ]
     },
     "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */

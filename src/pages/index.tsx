@@ -1,4 +1,4 @@
-import Main from '@src/components/Main/Main';
+import Main from '@components/Main/Main';
 
 const Home = () => {
   return <Main />;
