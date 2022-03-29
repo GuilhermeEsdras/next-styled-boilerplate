@@ -1,12 +1,10 @@
 import { render } from '@testing-library/react';
-// import { renderWithTheme } from '@src/utils/tests/helpers';
 
 import {{pascalCase name}} from './{{pascalCase name}}';
 
 describe('<{{pascalCase name}} /> Snapshot Matches', () => {
   it('renders {{pascalCase name}} unchanged', () => {
     const { container } = render(<{{pascalCase name}} />);
-    // const { container } = renderWithTheme(<{{pascalCase name}} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

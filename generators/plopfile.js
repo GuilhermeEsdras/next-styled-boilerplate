@@ -16,6 +16,11 @@ module.exports = (plop) => {
       },
       {
         type: 'confirm',
+        name: 'gonnaHaveThemes',
+        message: 'Your project is gonna have themes?',
+      },
+      {
+        type: 'confirm',
         name: 'wantTests',
         message: 'Do you want Test files for this component?',
       },
@@ -51,20 +56,37 @@ module.exports = (plop) => {
       }
 
       if (data.wantTests) {
-        actions.push(
-          {
-            type: 'add',
-            path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
-            templateFile: 'templates/components/test.tsx.hbs',
-            skipIfExists: true,
-          },
-          {
-            type: 'add',
-            path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
-            templateFile: 'templates/components/spec.tsx.hbs',
-            skipIfExists: true,
-          }
-        );
+        if (data.gonnaHaveThemes) {
+          actions.push(
+            {
+              type: 'add',
+              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+              templateFile: 'templates/components/test(with-theme).tsx.hbs',
+              skipIfExists: true,
+            },
+            {
+              type: 'add',
+              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
+              templateFile: 'templates/components/spec(with-theme).tsx.hbs',
+              skipIfExists: true,
+            }
+          );
+        } else {
+          actions.push(
+            {
+              type: 'add',
+              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+              templateFile: 'templates/components/test(no-theme).tsx.hbs',
+              skipIfExists: true,
+            },
+            {
+              type: 'add',
+              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
+              templateFile: 'templates/components/spec(no-theme).tsx.hbs',
+              skipIfExists: true,
+            }
+          );
+        }
       }
 
       if (data.wantStory) {
