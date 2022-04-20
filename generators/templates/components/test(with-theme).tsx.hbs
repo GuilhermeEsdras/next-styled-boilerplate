@@ -2,14 +2,14 @@ import { screen } from '@testing-library/react';
 
 import { renderWithTheme } from '@src/utils/tests/helpers';
 
-import {{pascalCase name}} from './{{pascalCase name}}';
+import {{pascalCase (getName name)}} from './{{pascalCase (getName name)}}';
 
-describe('<{{pascalCase name}} /> Tests', () => {
+describe('<{{pascalCase (getName name)}} /> Tests', () => {
   it('should render the heading', () => {
-    renderWithTheme(<{{pascalCase name}} />);
+    renderWithTheme(<{{pascalCase (getName name)}} />);
 
     expect(
-      screen.getByRole('heading', { name: /{{pascalCase name}}/i })
+      screen.getByRole('heading', { name: /{{pascalCase (getName name)}}/i })
     ).toBeInTheDocument();
   });
 });

@@ -7,7 +7,8 @@ module.exports = (plop) => {
       {
         type: 'input',
         name: 'name',
-        message: 'Enter the component name please',
+        message:
+          'Enter the component name please (you can indicate subfolders - eg.: folderName/ComponentName)',
       },
       {
         type: 'confirm',
@@ -36,20 +37,20 @@ module.exports = (plop) => {
       if (data.wantStyles) {
         actions.push({
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+          path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.tsx',
           templateFile: 'templates/components/index(with-styles).tsx.hbs',
           skipIfExists: true,
         });
         actions.push({
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.styles.ts',
+          path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.styles.ts',
           templateFile: 'templates/components/styles.ts.hbs',
           skipIfExists: true,
         });
       } else {
         actions.push({
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+          path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.tsx',
           templateFile: 'templates/components/index(no-styles).tsx.hbs',
           skipIfExists: true,
         });
@@ -60,13 +61,13 @@ module.exports = (plop) => {
           actions.push(
             {
               type: 'add',
-              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+              path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.test.tsx',
               templateFile: 'templates/components/test(with-theme).tsx.hbs',
               skipIfExists: true,
             },
             {
               type: 'add',
-              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
+              path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.spec.tsx',
               templateFile: 'templates/components/spec(with-theme).tsx.hbs',
               skipIfExists: true,
             }
@@ -75,13 +76,13 @@ module.exports = (plop) => {
           actions.push(
             {
               type: 'add',
-              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+              path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.test.tsx',
               templateFile: 'templates/components/test(no-theme).tsx.hbs',
               skipIfExists: true,
             },
             {
               type: 'add',
-              path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
+              path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.spec.tsx',
               templateFile: 'templates/components/spec(no-theme).tsx.hbs',
               skipIfExists: true,
             }
@@ -92,7 +93,7 @@ module.exports = (plop) => {
       if (data.wantStory) {
         actions.push({
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          path: '../src/components{{getPath name}}/{{pascalCase (getName name)}}/{{pascalCase (getName name)}}.stories.tsx',
           templateFile: 'templates/components/stories.tsx.hbs',
           skipIfExists: true,
         });
@@ -109,7 +110,8 @@ module.exports = (plop) => {
       {
         type: 'input',
         name: 'name',
-        message: 'Enter the page name please',
+        message:
+          'Enter the page name please (you can indicate subfolders - eg.: folderName/pagename)',
       },
       {
         type: 'confirm',
@@ -133,20 +135,20 @@ module.exports = (plop) => {
       if (data.wantStyles) {
         actions.push({
           type: 'add',
-          path: '../src/pages/{{lowerCase name}}/index.tsx',
+          path: '../src/pages{{getPath name}}/{{lowerCase (getName name)}}/index.tsx',
           templateFile: 'templates/pages/index(with-styles).tsx.hbs',
           skipIfExists: true,
         });
         actions.push({
           type: 'add',
-          path: '../src/pages/{{lowerCase name}}/styles.ts',
+          path: '../src/pages{{getPath name}}/{{lowerCase (getName name)}}/styles.ts',
           templateFile: 'templates/pages/styles.ts.hbs',
           skipIfExists: true,
         });
       } else {
         actions.push({
           type: 'add',
-          path: '../src/pages/{{lowerCase name}}/index.tsx',
+          path: '../src/pages{{getPath name}}/{{lowerCase (getName name)}}/index.tsx',
           templateFile: 'templates/pages/index(no-styles).tsx.hbs',
           skipIfExists: true,
         });
@@ -156,13 +158,13 @@ module.exports = (plop) => {
         actions.push(
           {
             type: 'add',
-            path: '../src/pages/{{lowerCase name}}/test.tsx',
+            path: '../src/pages{{getPath name}}/{{lowerCase (getName name)}}/test.tsx',
             templateFile: 'templates/pages/test.tsx.hbs',
             skipIfExists: true,
           },
           {
             type: 'add',
-            path: '../src/pages/{{lowerCase name}}/spec.tsx',
+            path: '../src/pages{{getPath name}}/{{lowerCase (getName name)}}/spec.tsx',
             templateFile: 'templates/pages/spec.tsx.hbs',
             skipIfExists: true,
           }
@@ -172,7 +174,7 @@ module.exports = (plop) => {
       if (data.wantStory) {
         actions.push({
           type: 'add',
-          path: '../src/pages/{{lowerCase name}}/stories.tsx',
+          path: '../src/pages{{getPath name}}/{{lowerCase (getName name)}}/stories.tsx',
           templateFile: 'templates/pages/stories.tsx.hbs',
           skipIfExists: true,
         });
@@ -181,4 +183,51 @@ module.exports = (plop) => {
       return actions;
     },
   });
+
+  plop.setHelper('getPath', (namePath) => {
+    let path = '/';
+    const directories = namePath.split('/');
+
+    if (directories.length > 1) {
+      directories.pop();
+      path += directories.join('/');
+    }
+
+    return path;
+  });
+
+  plop.setHelper('getImportPath', (namePath) => {
+    const defaultValue = 2;
+    let path = Array(defaultValue)
+      .fill()
+      .map(() => '..')
+      .join('/');
+
+    const directories = namePath.split('/');
+
+    if (directories.length > defaultValue) {
+      path = directories.map(() => '..').join('/');
+    }
+
+    return path;
+  });
+
+  plop.setHelper('getReferencePath', (namePath) => {
+    const defaultValue = 1;
+    let path = Array(defaultValue)
+      .fill()
+      .map(() => '..')
+      .join('/');
+
+    const directories = namePath.split('/');
+
+    if (directories.length > defaultValue) {
+      directories.pop();
+      path = directories.map(() => '..').join('/');
+    }
+
+    return path;
+  });
+
+  plop.setHelper('getName', (namePath) => namePath.split('/').pop());
 };

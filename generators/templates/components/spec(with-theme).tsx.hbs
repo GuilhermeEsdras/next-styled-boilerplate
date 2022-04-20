@@ -1,10 +1,10 @@
 import { renderWithTheme } from '@src/utils/tests/helpers';
 
-import {{pascalCase name}} from './{{pascalCase name}}';
+import {{pascalCase (getName name)}} from './{{pascalCase (getName name)}}';
 
-describe('<{{pascalCase name}} /> Snapshot Matches', () => {
-  it('renders {{pascalCase name}} unchanged', () => {
-    const { container } = renderWithTheme(<{{pascalCase name}} />);
+describe('<{{pascalCase (getName name)}} /> Snapshot Matches', () => {
+  it('renders {{pascalCase (getName name)}} unchanged', () => {
+    const { container } = renderWithTheme(<{{pascalCase (getName name)}} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
