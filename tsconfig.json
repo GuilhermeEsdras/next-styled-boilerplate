@@ -26,14 +26,23 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": { //alias pathing for absolute paths
+      "@components/*": [
+        "src/components/*"
+      ],
       "@pages/*": [
         "src/pages/*"
       ],
       "@styles/*": [
         "src/styles/*"
       ],
-      "@components/*": [
-        "src/components/*"
+      "@templates/*": [
+        "src/templates/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
       ],
       "@src/*": [
         "src/*"

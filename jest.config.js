@@ -1,9 +1,13 @@
 module.exports = {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '@src/(.*)': '<rootDir>/src/$1',
+    '@components/(.*)': '<rootDir>/src/components/$1',
     '@pages/(.*)': '<rootDir>/src/pages/$1',
     '@styles/(.*)': '<rootDir>/src/styles/$1',
+    '@templates/(.*)': '<rootDir>/src/templates/$1',
+    '@types/(.*)': '<rootDir>/src/types/$1',
+    '@utils/(.*)': '<rootDir>/src/utils/$1',
+    '@src/(.*)': '<rootDir>/src/$1',
 
     /* Handle CSS imports (with CSS modules) */
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
@@ -39,8 +43,9 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
     '!src/**/*.stories.ts(x)?',
-    '!src/pages/*',
+    '!src/pages/**/*',
     '!src/styles/*',
+    '!src/types/*',
   ],
   coverageDirectory: 'coverage',
   coverageThreshold: {
