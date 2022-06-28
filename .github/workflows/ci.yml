@@ -1,7 +1,7 @@
 name: ci
 on: [pull_request]
 
-jobs: 
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
@@ -16,8 +16,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Linting
-        run: yarn lint
+      - name: Linting and typescript
+        run: yarn lint && yarn typecheck
 
       - name: Test
         run: yarn test
